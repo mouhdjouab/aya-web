@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear System Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        #result, #error {
+            margin-top: 10px;
+        }
+
+        #error {
+            color: red;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        textarea, input, select {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Linear System Solver</h1>
+        <p>by Djouab Aya Wissam</p>
+    </header>
+
+    <div>
+        <label for="matrix">Matrix:</label>
+        <textarea id="matrix" rows="3"></textarea>
+    </div>
+
+    <div>
+        <label for="vector">Vector:</label>
+        <input type="text" id="vector">
+    </div>
+
+    <div>
+        <label for="method">Method:</label>
+        <select id="method">
+            <option value="Gauss">Gauss</option>
+            <option value="Jacobi">Jacobi</option>
+            <option value="Gauss-Seidel">Gauss-Seidel</option>
+        </select>
+    </div>
+
+    <button onclick="solveLinearSystem()">Solve</button>
+
+    <div>
+        <h2>Result:</h2>
+        <p id="result"></p>
+    
